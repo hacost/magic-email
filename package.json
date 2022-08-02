@@ -1,0 +1,24 @@
+{
+  "name": "magic-email",
+  "version": "1.0.0",
+  "description": "SDK to send mail with nodemailer and sendgrid",
+  "main": "main",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hacost/magic-email.git"
+  },
+  "keywords": [
+    "email",
+    "noemailer",
+    "sengrid"
+  ],
+  "author": "Héctor Acosta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hacost/magic-email/issues"
+  },
+  "homepage": "https://github.com/hacost/magic-email#readme"
+}
