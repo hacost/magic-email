@@ -15,19 +15,19 @@ const magicEmail = require('magic-email');
 
 // To use NodeMailer
 strategyParams = {
-	strategyName: 'NodeMailer',
-	smtp: {
-		host: HOST,
-		port: PORT,
-		user: USER,
-		password: PASSWORD
-	}
+  strategyName: 'NodeMailer',
+  smtp: {
+    host: HOST,
+    port: PORT,
+    user: USER,
+    password: PASSWORD
+    }
 }
 
 // To use SendGrid
 strategyParams = {
-	strategyName: 'SendGrid',
-	apiKey: API_KEY
+  strategyName: 'SendGrid',
+  apiKey: API_KEY
 }
 
 emailParams = {

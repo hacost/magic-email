@@ -1,8 +1,8 @@
 {
   "name": "magic-email",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "SDK to send mail with nodemailer and sendgrid",
-  "main": "main",
+  "main": "emails/main",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
