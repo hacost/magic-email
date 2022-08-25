@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 class NodeMailer {
   constructor (smtpParams, senderParams){
     this.senderParams = senderParams;
-    this.transport = nodemailer.createTransport({
+    this.transporter = nodemailer.createTransport({
       host: smtpParams.host,
       port: smtpParams.port,
       secure: true,
@@ -20,8 +20,16 @@ class NodeMailer {
         if (emailParams.to) {
           emailParams.from = `${this.senderParams.senderName} <${this.senderParams.senderEmail}>`;
           if (!sandboxMode) {
-            await this.transport.sendMail(emailParams);     
-            console.log('email sent successfully')            
+            this.#verifiedConnection();
+            this.transporter.sendMail(emailParams, function(error, response)  {
+              if (error) {
+                  console.log(error);
+                  res.end("error");
+              } else {
+                  console.log('Message sent successfully: ' + response.message);
+                  res.end("sent");
+              }
+            })         
           } else {
             //sandboxMode
           }         
@@ -35,6 +43,16 @@ class NodeMailer {
     } catch (error) {
       console.log(`error: ${error.message}`);
     }
+  }
+
+  #verifiedConnection() {
+    this.transporter.verify(function (error, success){
+      if (error) {
+        console.log(error)
+      } else {
+        console.log("Mailer connection verified");
+      }
+    })
   }
 }
 

@@ -15,9 +15,6 @@ const magicEmail = {
         let sendGrid = new SendGrid(strategyParams.apiKey, senderParams);
         sendGrid.sendMail(emailParams, sandboxMode);
         break;
-      case 'MailerSend':
-        //mailerSend.sendMail(apiKey, emailParams, sandboxMode);
-        break;
       case 'NodeMailer':
         let nodeMailer = new NodeMailer(strategyParams.smtp, senderParams);
         nodeMailer.sendMail(emailParams, sandboxMode);

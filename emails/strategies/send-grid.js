@@ -3,7 +3,7 @@ const sgMail = require("@sendgrid/mail");
 class SendGrid {
   constructor(apiKey, senderParams) {
     this.senderParams = senderParams;
-    this.transport = sgMail.setApiKey(apiKey);
+    this.transporter = sgMail.setApiKey(apiKey);
   }
 
   async sendMail(emailParams, sandboxMode = false) {
@@ -15,8 +15,13 @@ class SendGrid {
               enable: sandboxMode,
             },
           };
-          await this.transport.send(this.#processEmailParams(emailParams));
-          console.log("email sent successfully");
+          this.transporter.send(this.#processEmailParams(emailParams), function(error, response)  {
+            if (error) {
+                console.log(error);
+              } else {
+                console.log('Message sent successfully: ' + response.message);
+            }
+          }) 
         } else {
           throw new Error("emailParams.to is Empty");
         }  
@@ -32,6 +37,7 @@ class SendGrid {
   }
 
   // private functions
+
   #removeWhiteSpace = (string) => {
     return string.replace(/\s/g, "");
   };

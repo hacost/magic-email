@@ -1,7 +1,7 @@
 {
   "name": "magic-email",
-  "version": "1.0.2",
-  "description": "SDK to send mail with nodemailer and sendgrid",
+  "version": "1.0.3",
+  "description": "SDK to send email with nodemailer and sendGrid",
   "main": "emails/main",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,8 +12,8 @@
   },
   "keywords": [
     "email",
-    "noemailer",
-    "sengrid"
+    "nodeMailer",
+    "senGrid"
   ],
   "author": "Héctor Acosta",
   "license": "ISC",
