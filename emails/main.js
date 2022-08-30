@@ -2,13 +2,16 @@ const SendGrid = require('./strategies/send-grid');
 const NodeMailer = require('./strategies/node-mailer');
 
 // private
-senderParams = {
+defaultSender = {
 	senderName: 'Magic Intelligence',
 	senderEmail: 'app@magicintelligence.com'
 }
 
 const magicEmail = {
-  async sendEmail(strategyParams, emailParams, sandboxMode = false) {
+  async sendEmail(strategyParams, 
+                  senderParams = defaultSender,
+                  emailParams,
+                  sandboxMode = false) {
     try {
       switch (strategyParams.strategyName) {
       case 'SendGrid':

@@ -1,6 +1,6 @@
 {
   "name": "magic-email",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "SDK to send email with nodemailer and sendGrid",
   "main": "emails/main",
   "scripts": {
@@ -15,7 +15,7 @@
     "nodeMailer",
     "senGrid"
   ],
-  "author": "Héctor Acosta",
+  "author": "Hector Acosta",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hacost/magic-email/issues"

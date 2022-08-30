@@ -30,6 +30,11 @@ strategyParams = {
   apiKey: API_KEY
 }
 
+senderParams = {
+	senderName: 'Sender Name',
+	senderEmail: 'mail@mail.com'
+}
+
 emailParams = {
   to: 'mail@mail.com',
   cc: 'mail@mail.com',
@@ -38,6 +43,6 @@ emailParams = {
   html: '<b> This is the HTML content</b>'
 }
 
-magicEmail.sendEmail(strategyParams, emailParams);
+magicEmail.sendEmail(strategyParams, senderParams, emailParams);
 
 ```
